@@ -1,0 +1,1450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Graphics.Canvas</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasAntialiasing">
+      <summary>Specifies the antialiasing mode for non-text primitives.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasAntialiasing.Antialiased">
+      <summary>Edges are antialiased using a high quality per-primitive method.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasAntialiasing.Aliased">
+      <summary>Edges are aliased.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasBlend">
+      <summary>Specifies the blend mode used to draw primitives.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasBlend.SourceOver">
+      <summary>The standard source-over-destination blend mode, also known as premultiplied alpha blending.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasBlend.Copy">
+      <summary>The source is copied to the destination; destination pixels are ignored.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasBlend.Min">
+      <summary>Use the minimum of the source and destination pixel values.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasBlend.Add">
+      <summary>Take the sum of the source and destination pixel values.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasCapStyle">
+      <summary>Describes the shape at the end of a line or segment.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasCapStyle.Flat">
+      <summary>A cap that does not extend past the last point of the line.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasCapStyle.Square">
+      <summary>Half of a square that has a length equal to the line thickness.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasCapStyle.Round">
+      <summary>A semicircle that has a diameter equal to the line thickness.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasCapStyle.Triangle">
+      <summary>An isosceles right triangle whose hypotenuse is equal in length to the thickness of the line.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasDashStyle">
+      <summary>Describes the sequence of dashes, dots, and gaps in a stroke style.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDashStyle.Solid">
+      <summary>A solid line with no breaks.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDashStyle.Dash">
+      <summary>A dash followed by a gap of equal length.
+               The dash and the gap are each twice as long as the stroke thickness.
+               The equivalent custom dash style is { 2, 2 }.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDashStyle.Dot">
+      <summary>A dot followed by a longer gap.
+               The equivalent custom dash style is { 0, 2 }.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDashStyle.DashDot">
+      <summary>A dash, followed by a gap, followed by a dot, followed by another gap.
+               The equivalent custom dash style is { 2, 2, 0, 2 }.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDashStyle.DashDotDot">
+      <summary>A dash, followed by a gap, followed by a dot, followed by another gap, followed by another dot, followed by another gap.
+               The equivalent custom dash style is { 2, 2, 0, 2, 0, 2 }.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasDebugLevel">
+      <summary>Indicates the type of information provided when the Direct2D Debug Layer is enabled.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDebugLevel.None">
+      <summary>No debugging output.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDebugLevel.Error">
+      <summary>Only error messages are output.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDebugLevel.Warning">
+      <summary>Error messages and warnings are output.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDebugLevel.Information">
+      <summary>Error messages, warnings, and additional diagnostic information that can help improve performance are output.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasLineJoin">
+      <summary>Describes the shape that joins two lines or segments.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasLineJoin.Miter">
+      <summary>Regular angular vertices.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasLineJoin.Bevel">
+      <summary>Beveled vertices.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasLineJoin.Round">
+      <summary>Rounded vertices.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasLineJoin.MiterOrBevel">
+      <summary>Regular angular vertices unless the join would extend beyond the miter limit; otherwise, beveled vertices.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasStrokeTransformBehavior">
+      <summary>Defines how the world transform, dots per inch (DPI), and stroke width affect the shape of the pen used to stroke a primitive.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasStrokeTransformBehavior.Normal">
+      <summary>The stroke respects the currently set world transform, the DPI, and the stroke width.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasStrokeTransformBehavior.Fixed">
+      <summary>The stroke does not respect the world transform but it does respect the DPI and stroke width.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasStrokeTransformBehavior.Hairline">
+      <summary>The stroke is forced to 1 pixel wide (in device space) and does not respect the world transform, the DPI, or the stroke width.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasTextAntialiasing">
+      <summary>Specifies the antialiasing mode for drawing text.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextAntialiasing.Default">
+      <summary>Use the system default.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextAntialiasing.ClearType">
+      <summary>Use ClearType antialiasing.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextAntialiasing.Grayscale">
+      <summary>Use grayscale antialiasing.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextAntialiasing.Aliased">
+      <summary>Do not use antialiasing.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasUnits">
+      <summary>Specifies what units coordinates are in. This is important for making sure
+               everything stays in the right place when running on high DPI devices.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasUnits.Dips">
+      <summary>Units are interpreted as device-independent pixels. This matches the behavior of the XAML UI framework.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasUnits.Pixels">
+      <summary>Units are interpreted as pixels. This matches the Direct3D graphics API.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasBitmap">
+      <summary>A bitmap is a 2D grid of pixels that form an image.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasBitmap.Dispose">
+      <summary>Releases all resources used by the CanvasBitmap.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasBitmap.LoadAsync(Microsoft.Graphics.Canvas.ICanvasResourceCreator,System.String)">
+      <summary>Loads a bitmap from an image file (jpeg, png, etc.)</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasBitmap.SizeInDips">
+      <summary>Gets the size of the bitmap, in device independent pixels (dips).</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasBitmap.SizeInPixels">
+      <summary>Gets the size of the bitmap, in pixels.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.ICanvasBrush">
+      <summary>A brush defines the color of things being drawn. It can be a solid color, or a bitmap pattern, or a gradient.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.ICanvasBrush.Opacity">
+      <summary>Gets or sets the opacity of the brush.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.ICanvasBrush.Transform">
+      <summary>Gets or sets the brush transform matrix.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasSolidColorBrush">
+      <summary>The simplest kind of brush. Paints things a solid color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasSolidColorBrush.#ctor(Microsoft.Graphics.Canvas.ICanvasResourceCreator,Windows.UI.Color)">
+      <summary>Initializes a new instance of the CanvasSolidColorBrush class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasSolidColorBrush.Dispose">
+      <summary>Releases all resources used by the CanvasSolidColorBrush.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasSolidColorBrush.Transform">
+      <summary>Gets or sets the brush transform matrix.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasSolidColorBrush.Opacity">
+      <summary>Gets or sets the opacity of the brush.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasSolidColorBrush.Color">
+      <summary>Gets or sets the color of the solid brush.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasControl">
+      <summary>XAML control providing immediate mode 2D rendering. Start here if you are new to the Win2D API.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasControl.#ctor">
+      <summary>Initializes a new instance of the CanvasControl class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasControl.Invalidate">
+      <summary>Indicates that the contents of the CanvasControl need to be redrawn.
+               Calling Invalidate results in the Draw event being raised shortly afterward.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasControl.Device">
+      <summary>Gets the underlying device used by this control.</summary>
+    </member>
+    <member name="E:Microsoft.Graphics.Canvas.CanvasControl.CreateResources">
+      <summary>Hook this event to create any resources needed for your drawing.</summary>
+    </member>
+    <member name="E:Microsoft.Graphics.Canvas.CanvasControl.Draw">
+      <summary>This is where the magic happens! Hook this event to issue your immediate mode 2D drawing calls.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasDrawEventArgs">
+      <summary>Information passed to the CanvasControl.Draw event.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawEventArgs.#ctor(Microsoft.Graphics.Canvas.CanvasDrawingSession)">
+      <summary>Initializes a new instance of the CanvasDrawEventArgs class.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDrawEventArgs.DrawingSession">
+      <summary>Gets the drawing session for use by the current event handler.
+               This provides methods to draw lines, rectangles, text etc.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasDevice">
+      <summary>Devices are used to create graphics resources and drawing sessions.
+               Most apps should use the CanvasControl wrapper instead of directly managing their own CanvasDevice.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDevice.#ctor(Microsoft.Graphics.Canvas.CanvasDebugLevel)">
+      <summary>Initializes a new instance of the CanvasDevice class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDevice.#ctor(Microsoft.Graphics.Canvas.CanvasDebugLevel,Microsoft.Graphics.Canvas.CanvasHardwareAcceleration)">
+      <summary>Initializes a new instance of the CanvasDevice class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDevice.#ctor">
+      <summary>Initializes a new instance of the CanvasDevice class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDevice.Dispose">
+      <summary>Releases all resources used by the CanvasDevice.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDevice.CreateFromDirect3D11Device(Microsoft.Graphics.Canvas.CanvasDebugLevel,Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DDevice)">
+      <summary>Creates a CanvasDevice that will use the specified Direct3DDevice.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDevice.Direct3DDevice">
+      <summary>Gets the Direct3DDevice used by this CanvasDevice.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDevice.HardwareAcceleration">
+      <summary>Gets whether this device is using GPU hardware acceleration.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDevice.Device">
+      <summary>Implements the ICanvasResourceCreator interface by returning 'this'.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasHardwareAcceleration">
+      <summary>Specifies whether a graphics device uses GPU hardware acceleration or software rendering.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasHardwareAcceleration.Auto">
+      <summary>Use GPU hardware acceleration if possible, otherwise fall back to software rendering.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasHardwareAcceleration.On">
+      <summary>Use GPU hardware acceleration. Throw an exception if that is not available.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasHardwareAcceleration.Off">
+      <summary>Use the WARP software renderer.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasHardwareAcceleration.Unknown">
+      <summary>Indicates that it is not known whether this device uses hardware or software rendering.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasDrawingSession">
+      <summary>Drawing sessions are used to issue graphics drawing commands. This is the main way to draw things onto a canvas.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.Clear(Windows.UI.Color)">
+      <summary>Clears to the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawImage(Microsoft.Graphics.Canvas.ICanvasImage)">
+      <summary>Draws an image positioned at the origin.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawImage(Microsoft.Graphics.Canvas.ICanvasImage,System.Single,System.Single)">
+      <summary>Draws an image at the specified position.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawImage(Microsoft.Graphics.Canvas.ICanvasImage,Microsoft.Graphics.Canvas.Numerics.Vector2)">
+      <summary>Draws an image at the specified position.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a line of single unit width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a line of the specified width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a line of the specified width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Draws a line of single unit width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single)">
+      <summary>Draws a line of the specified width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a line of the specified width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a line of single unit width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a line of the specified width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a line of the specified width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.Numerics.Vector2,Windows.UI.Color)">
+      <summary>Draws a line of single unit width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.Numerics.Vector2,Windows.UI.Color,System.Single)">
+      <summary>Draws a line of the specified width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawLine(Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.Numerics.Vector2,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a line of the specified width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a rectangle of single unit stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a rectangle of the specified stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rectangle of the specified stroke width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Draws a rectangle of single unit stroke width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single)">
+      <summary>Draws a rectangle of the specified stroke width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rectangle of the specified stroke width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(Windows.Foundation.Rect,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a rectangle of single unit stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(Windows.Foundation.Rect,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a rectangle of the specified stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(Windows.Foundation.Rect,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rectangle of the specified stroke width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(Windows.Foundation.Rect,Windows.UI.Color)">
+      <summary>Draws a rectangle of single unit stroke width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(Windows.Foundation.Rect,Windows.UI.Color,System.Single)">
+      <summary>Draws a rectangle of the specified stroke width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRectangle(Windows.Foundation.Rect,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rectangle of the specified stroke width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRectangle(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of a rectangle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRectangle(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Fills the interior of a rectangle with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRectangle(Windows.Foundation.Rect,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of a rectangle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRectangle(Windows.Foundation.Rect,Windows.UI.Color)">
+      <summary>Fills the interior of a rectangle with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a rounded rectangle of single unit stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a rounded rectangle of the specified stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rounded rectangle of the specified stroke width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Draws a rounded rectangle of single unit stroke width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single)">
+      <summary>Draws a rounded rectangle of the specified stroke width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rounded rectangle of the specified stroke width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a rounded rectangle of single unit stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a rounded rectangle of the specified stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rounded rectangle of the specified stroke width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Draws a rounded rectangle of single unit stroke width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Windows.UI.Color,System.Single)">
+      <summary>Draws a rounded rectangle of the specified stroke width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a rounded rectangle of the specified stroke width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of a rounded rectangle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRoundedRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Fills the interior of a rounded rectangle with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of a rounded rectangle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillRoundedRectangle(Windows.Foundation.Rect,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Fills the interior of a rounded rectangle with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>It's like a circle, but squashed. Using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>It's like a circle, but squashed. Using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>It's like a circle, but squashed. Using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>It's like a circle, but squashed.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single)">
+      <summary>It's like a circle, but squashed.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>It's like a circle, but squashed.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>It's like a circle, but squashed. Using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>It's like a circle, but squashed. Using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>It's like a circle, but squashed. Using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Windows.UI.Color)">
+      <summary>It's like a circle, but squashed.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Windows.UI.Color,System.Single)">
+      <summary>It's like a circle, but squashed.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>It's like a circle, but squashed.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillEllipse(System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of an ellipse, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillEllipse(System.Single,System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Fills the interior of a ellipse with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of an ellipse, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillEllipse(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Fills the interior of a ellipse with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a circle of single unit stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a circle of the specified stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a circle of the specified stroke width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Draws a circle of single unit stroke width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(System.Single,System.Single,System.Single,Windows.UI.Color,System.Single)">
+      <summary>Draws a circle of the specified stroke width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(System.Single,System.Single,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a circle of the specified stroke width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Draws a circle of single unit stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single)">
+      <summary>Draws a circle of the specified stroke width, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a circle of the specified stroke width, using a brush to define the color and with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Windows.UI.Color)">
+      <summary>Draws a circle of single unit stroke width and the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Windows.UI.Color,System.Single)">
+      <summary>Draws a circle of the specified stroke width and color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Windows.UI.Color,System.Single,Microsoft.Graphics.Canvas.CanvasStrokeStyle)">
+      <summary>Draws a circle of the specified stroke width and color, with a custom stroke style.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillCircle(System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of a circle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillCircle(System.Single,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Fills the interior of a circle with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush)">
+      <summary>Fills the interior of a circle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.FillCircle(Microsoft.Graphics.Canvas.Numerics.Vector2,System.Single,Windows.UI.Color)">
+      <summary>Fills the interior of a circle with the specified color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,System.Single,System.Single,Windows.UI.Color)">
+      <summary>Draws text using a default font.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,Microsoft.Graphics.Canvas.Numerics.Vector2,Windows.UI.Color)">
+      <summary>Draws text using a default font.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text at the specified position, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,System.Single,System.Single,Windows.UI.Color,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text at the specified position.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,Microsoft.Graphics.Canvas.Numerics.Vector2,Microsoft.Graphics.Canvas.ICanvasBrush,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text at the specified position, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,Microsoft.Graphics.Canvas.Numerics.Vector2,Windows.UI.Color,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text at the specified position.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,System.Single,System.Single,System.Single,System.Single,Microsoft.Graphics.Canvas.ICanvasBrush,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text inside the specified rectangle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,System.Single,System.Single,System.Single,System.Single,Windows.UI.Color,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text inside the specified rectangle.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,Windows.Foundation.Rect,Microsoft.Graphics.Canvas.ICanvasBrush,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text inside the specified rectangle, using a brush to define the color.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.DrawText(System.String,Windows.Foundation.Rect,Windows.UI.Color,Microsoft.Graphics.Canvas.CanvasTextFormat)">
+      <summary>Draws text inside the specified rectangle.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasDrawingSession.Dispose">
+      <summary>Releases all resources used by the CanvasDrawingSession.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDrawingSession.Units">
+      <summary>Sets what units are used to specifiy coordinates for this drawing session.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDrawingSession.Transform">
+      <summary>Sets the transform matrix for this drawing session.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDrawingSession.TextAntialiasing">
+      <summary>Sets the text antialiasing mode for this drawing session.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDrawingSession.Blend">
+      <summary>Sets the blend mode for this drawing session.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDrawingSession.Antialiasing">
+      <summary>Enables or disables primitive edge antialiasing for this drawing session.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasDrawingSession.Device">
+      <summary>Gets the underlying device used by this drawing session.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasBackground">
+      <summary>Specifies whether the background of a canvas is transparent or opaque.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasBackground.Transparent">
+      <summary>Transparent background, likely to be what most users want by default.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasBackground.Opaque">
+      <summary>Opaque background, can allow for increased efficiency.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasImageSource">
+      <summary>Derives from Windows.UI.Xaml.Media.Imaging.SurfaceImageSource and extends it to know about Canvas types.
+               Most apps should use the CanvasControl wrapper instead of directly managing their own CanvasImageSource.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasImageSource.#ctor(Microsoft.Graphics.Canvas.ICanvasResourceCreator,System.Int32,System.Int32)">
+      <summary>Initializes a new instance of the CanvasImageSource class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasImageSource.#ctor(Microsoft.Graphics.Canvas.ICanvasResourceCreator,System.Int32,System.Int32,Microsoft.Graphics.Canvas.CanvasBackground)">
+      <summary>Initializes a new instance of the CanvasImageSource class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasImageSource.CreateDrawingSession">
+      <summary>Returns a new drawing session for redrawing the entire image source.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasImageSource.CreateDrawingSession(Windows.Foundation.Rect)">
+      <summary>Returns a new drawing session for updating a region of the image source.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasImageSource.Device">
+      <summary>Gets or sets the device used by this image source.
+               Changing this property binds the image source to a different device.
+               This is used after a new device is recovered after a device lost.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.ICanvasImage">
+      <summary>Abstract interface representing anything that stores or is able to create a 2D image.
+               This can be a <see cref="T:Microsoft.Graphics.Canvas.CanvasBitmap" />,
+               command list, or image processing effect.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.ICanvasResourceCreator">
+      <summary>Represents any object that can create graphics resources.
+               Implemented by <see cref="T:Microsoft.Graphics.Canvas.CanvasDevice" /> 
+               and <see cref="T:Microsoft.Graphics.Canvas.CanvasControl" />.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.ICanvasResourceCreator.Device">
+      <summary>The device that will be used to create resources.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasStrokeStyle">
+      <summary>Defines a stroke style for drawing lines. Dashes, dots, how to join segments, how to cap the ends, etc.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasStrokeStyle.#ctor">
+      <summary>Initializes a new instance of the CanvasStrokeStyle class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasStrokeStyle.Dispose">
+      <summary>Releases all resources used by the CanvasStrokeStyle.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.TransformBehavior">
+      <summary>Gets or sets how the world transform, dots per inch (DPI), and stroke width affect the shape of the pen.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.StartCap">
+      <summary>Gets or sets the type of shape used at the beginning of a stroke.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.MiterLimit">
+      <summary>Gets or sets the limit on the ratio of the miter length to half the stroke's thickness.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.LineJoin">
+      <summary>Gets or sets the type of joint used at the vertices of a shape's outline.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.EndCap">
+      <summary>Gets or sets the type of shape used at the end of a stroke.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.DashStyle">
+      <summary>Gets or sets the stroke's dash pattern.
+               This is ignored if <see cref="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.CustomDashStyle" /> has been set.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.DashOffset">
+      <summary>Gets or sets how far into the dash sequence the stroke will start.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.DashCap">
+      <summary>Gets or sets how the ends of each dash are drawn.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.CustomDashStyle">
+      <summary>Gets or sets an array describing a custom dash pattern.
+               This overrides the <see cref="P:Microsoft.Graphics.Canvas.CanvasStrokeStyle.DashStyle" />
+               property, which is only used when CustomDashStyle is set to null.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasTextDirection">
+      <summary>Specifies the direction in which text is formatted and read.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextDirection.TopToBottom">
+      <summary>Reading progresses from top to bottom.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextDirection.BottomToTop">
+      <summary>Reading progresses from bottom to top.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextDirection.LeftToRight">
+      <summary>Reading progresses from left to right.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextDirection.RightToLeft">
+      <summary>Reading progresses from right to left.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasLineSpacingMethod">
+      <summary>Specifies how text line spacing is applied.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasLineSpacingMethod.Default">
+      <summary>Line spacing depends solely on the content, adjusting to accommodate the size of fonts and inline objects.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasLineSpacingMethod.Uniform">
+      <summary>Lines are explicitly set to uniform spacing, regardless of the size of fonts and inline objects.
+               This can be useful to avoid the uneven appearance that can occur from font fallback.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasVerticalAlignment">
+      <summary>Specifies the vertical alignment of paragraph text.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasVerticalAlignment.Top">
+      <summary>The top of the text is aligned to the top edge of the layout box.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasVerticalAlignment.Bottom">
+      <summary>The bottom of the text is aligned to the bottom edge of the layout box.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasVerticalAlignment.Center">
+      <summary>The center of the text is aligned to the center of the layout box.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasTextTrimmingGranularity">
+      <summary>Specifies the granularity used to trim text overflowing the layout box.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextTrimmingGranularity.None">
+      <summary>No trimming occurs. Text flows beyond the layout width.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextTrimmingGranularity.Character">
+      <summary>Trimming occurs at a character cluster boundary.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasTextTrimmingGranularity.Word">
+      <summary>Trimming occurs at a word boundary.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasWordWrapping">
+      <summary>Specifies word wrapping behavior.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasWordWrapping.Wrap">
+      <summary>Words are broken across lines to avoid text overflowing the layout box.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasWordWrapping.NoWrap">
+      <summary>Words are kept within the same line even when it overflows the layout box.
+               This option is often used with scrolling to reveal overflow text.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasWordWrapping.EmergencyBreak">
+      <summary>Words are broken across lines to avoid text overflowing the layout box.
+               Emergency wrapping occurs if the word is larger than the maximum width.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasWordWrapping.WholeWord">
+      <summary>When emergency wrapping, only wrap whole words, never breaking words
+               when the layout width is too small for even a single word.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasWordWrapping.Character">
+      <summary>Wrap between any valid character clusters.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasDrawTextOptions">
+      <summary>Specifies text drawing options.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDrawTextOptions.Default">
+      <summary>Text is vertically snapped to pixel boundaries and is not clipped to the layout rectangle.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDrawTextOptions.NoSnap">
+      <summary>Text is not vertically snapped to pixel boundaries. This setting is recommended for text that is being animated.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDrawTextOptions.Clip">
+      <summary>Text is clipped to the layout rectangle.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.CanvasDrawTextOptions.EnableColorFont">
+      <summary>Text is rendered using color versions of glyphs, if defined by the font.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.CanvasTextFormat">
+      <summary>Describes font and layout options for drawing text.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasTextFormat.#ctor">
+      <summary>Initializes a new instance of the CanvasTextFormat class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.CanvasTextFormat.Dispose">
+      <summary>Releases all resources used by the CanvasTextFormat.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.WordWrapping">
+      <summary>Specifies word wrapping behavior.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.VerticalAlignment">
+      <summary>Specifies the vertical paragraph alignment.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.TrimmingGranularity">
+      <summary>Specifies the granularity used to trim text overflowing the layout box.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.TrimmingDelimiterCount">
+      <summary>A value that indicates how many occurrences of the delimiter to step back.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.TrimmingDelimiter">
+      <summary>A character code used as the delimiter that signals the beginning of the portion of text to be preserved.
+               Most useful for path ellipsis, where the delimiter would be a slash.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.ReadingDirection">
+      <summary>Specifies the direction in which the text is read.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.ParagraphAlignment">
+      <summary>Specifies the horizontal paragraph alignment.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.Options">
+      <summary>Specifies text drawing options.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.LocaleName">
+      <summary>Specifies the locale name.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.LineSpacingMethod">
+      <summary>Specifies how line spacing is applied.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.LineSpacingBaseline">
+      <summary>Specifies the distance from top of line to baseline. A reasonable ratio to lineSpacing is 80 percent.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.LineSpacing">
+      <summary>Specifies the line height, or distance from one baseline to another.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.IncrementalTabStop">
+      <summary>Specifies the incremental tab stop position.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.FontWeight">
+      <summary>Specifies the density of a typeface, in terms of the lightness or heaviness of the strokes.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.FontStyle">
+      <summary>Specifies the style of a font face (for example, normal or italic).</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.FontStretch">
+      <summary>Specifies the degree to which the font is stretched, compared to the normal aspect ratio of that font.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.FontSize">
+      <summary>Specifies the font size.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.FontFamily">
+      <summary>Specifies the font family name (Arial, Times New Roman, etc.)</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.CanvasTextFormat.FlowDirection">
+      <summary>Specifies the direction in which the text lines are flowed.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Effects.EffectBorderMode">
+      <summary>Enumeration type that specifies how to process border pixels.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Effects.EffectBorderMode.Soft">
+      <summary>Pixels outside the edge are marked as black which makes edge color softer after processing.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Effects.EffectBorderMode.Hard">
+      <summary>Pixels outside the bounds are mirrored.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Effects.EffectOptimization">
+      <summary>Enumeration type that specifies speed quality trade-off.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Effects.EffectOptimization.Speed">
+      <summary>Better speed and less quality.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Effects.EffectOptimization.Balanced">
+      <summary>Balance between speed and quality.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Effects.EffectOptimization.Quality">
+      <summary>Maximum quality for this effect is achieved by losing speed.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect">
+      <summary>Creates a blur effect based on the Gaussian function over the entire input image.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.#ctor">
+      <summary>Initializes a new instance of the GaussianBlurEffect class.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.Dispose">
+      <summary>Releases all resources used by the GaussianBlurEffect.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.StandardDeviation">
+      <summary>Gets or sets the amount of blur to be applied to the image. </summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.Source">
+      <summary>Gets or sets the input source for Gaussian blur effect. </summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.Optimization">
+      <summary>Gets and sets optimization for effects processing. </summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.BorderMode">
+      <summary>Gets and sets border mode for edge pixels. </summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.EffectId">
+      <summary>Gets a unique identifier for the effect.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.Inputs">
+      <summary>Gets a collection of inputs attached to the effect.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect.Properties">
+      <summary>Gets the collection of properties specific to the current effect.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Effects.IEffect">
+      <summary>Abstract interface representing an effect used for image processing.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.IEffect.EffectId">
+      <summary>Gets a unique identifier for the effect.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.IEffect.Inputs">
+      <summary>Gets a collection of inputs attached to the effect.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.Effects.IEffect.Properties">
+      <summary>Gets the collection of properties specific to the current effect.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Effects.IEffectInput">
+      <summary> Represents a type that can be accepted as input for IEffect object. </summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings">
+      <summary>Identifies the ways in which a resource may be bound to the graphics pipeline.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.VertexBuffer">
+      <summary>Bind a buffer as a vertex buffer to the input-assembler stage.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.IndexBuffer">
+      <summary>Bind a buffer as an index buffer to the input-assembler stage.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.ConstantBuffer">
+      <summary>Bind a buffer as a constant buffer to a shader stage.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.ShaderResource">
+      <summary>Bind a buffer or texture to a shader stage.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.StreamOutput">
+      <summary>Bind an output buffer for the stream-output stage.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.RenderTarget">
+      <summary>Bind a texture as a render target for the output-merger stage.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.DepthStencil">
+      <summary>Bind a texture as a depth-stencil target for the output-merger stage.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.UnorderedAccess">
+      <summary>Bind an unordered access resource.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.Decoder">
+      <summary>Set this flag to indicate that a 2D texture is used to receive output from the decoder API.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DBindings.VideoEncoder">
+      <summary>Set this flag to indicate that a 2D texture is used to receive input from the video encoder API.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DDevice">
+      <summary>A GPU rendering device, used for interop between different APIs.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DDevice.Trim">
+      <summary>Trims any graphics memory allocated by the graphics device on the app's behalf.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DDevice.Dispose">
+      <summary>Releases all resources used by the Direct3DDevice.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DMultisampleDescription">
+      <summary>Describes multi-sampling parameters for a <see cref="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurface" />.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DMultisampleDescription.Count">
+      <summary>The number of multisamples per pixel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DMultisampleDescription.Quality">
+      <summary>The image quality level. The higher the quality, the lower the performance.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurface">
+      <summary>A GPU format 2D bitmap surface, used for interop between different APIs.</summary>
+    </member>
+    <member name="M:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurface.Dispose">
+      <summary>Releases all resources used by the Direct3DSurface.</summary>
+    </member>
+    <member name="P:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurface.Description">
+      <summary>Gets a description of the surface.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurfaceDescription">
+      <summary>Describes a <see cref="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurface" />.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurfaceDescription.Width">
+      <summary>Width of the surface.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurfaceDescription.Height">
+      <summary>Height of the surface.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurfaceDescription.Format">
+      <summary>Pixel format of the surface.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DSurfaceDescription.MultisampleDescription">
+      <summary>Multi-sampling parameters for the surface.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DUsage">
+      <summary>Identifies expected resource use during rendering.
+               The usage directly reflects whether a resource is accessible by the CPU and/or the graphics processing unit (GPU).</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DUsage.Default">
+      <summary>A resource that requires read and write access by the GPU.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DUsage.Immutable">
+      <summary>A resource that can only be read by the GPU.
+               It cannot be written by the GPU, and cannot be accessed at all by the CPU.
+               This type of resource must be initialized when it is created, since it cannot be changed after creation.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DUsage.Dynamic">
+      <summary>A resource that is accessible by both the GPU (read only) and the CPU (write only).
+               A dynamic resource is a good choice for a resource that will be updated by the CPU at least once per frame.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.Direct3D11.Direct3DUsage.Staging">
+      <summary>A resource that supports data transfer (copy) from the GPU to the CPU.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat">
+      <summary>Specifies the pixel format of a DirectX surface.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Unknown">
+      <summary>The format is not known.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32A32Typeless">
+      <summary>A four-component, 128-bit typeless format that supports 32 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32A32Float">
+      <summary>A four-component, 128-bit floating-point format that supports 32 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32A32UInt">
+      <summary>A four-component, 128-bit unsigned-integer format that supports 32 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32A32Int">
+      <summary>A four-component, 128-bit signed-integer format that supports 32 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32Typeless">
+      <summary>A three-component, 96-bit typeless format that supports 32 bits per color channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32Float">
+      <summary>A three-component, 96-bit floating-point format that supports 32 bits per color channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32UInt">
+      <summary>A three-component, 96-bit unsigned-integer format that supports 32 bits per color channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32B32Int">
+      <summary>A three-component, 96-bit signed-integer format that supports 32 bits per color channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16B16A16Typeless">
+      <summary>A four-component, 64-bit typeless format that supports 16 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16B16A16Float">
+      <summary>A four-component, 64-bit floating-point format that supports 16 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16B16A16UIntNormalized">
+      <summary>A four-component, 64-bit unsigned-normalized-integer format that supports 16 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16B16A16UInt">
+      <summary>A four-component, 64-bit unsigned-integer format that supports 16 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16B16A16IntNormalized">
+      <summary>A four-component, 64-bit signed-normalized-integer format that supports 16 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16B16A16Int">
+      <summary>A four-component, 64-bit signed-integer format that supports 16 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32Typeless">
+      <summary>A two-component, 64-bit typeless format that supports 32 bits for the red channel and 32 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32Float">
+      <summary>A two-component, 64-bit floating-point format that supports 32 bits for the red channel and 32 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32UInt">
+      <summary>A two-component, 64-bit unsigned-integer format that supports 32 bits for the red channel and 32 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G32Int">
+      <summary>A two-component, 64-bit signed-integer format that supports 32 bits for the red channel and 32 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32G8X24Typeless">
+      <summary>A two-component, 64-bit typeless format that supports 32 bits for the red channel, 8 bits for the green channel, and 24 bits are unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.D32FloatS8X24UInt">
+      <summary>A 32-bit floating-point component, and two unsigned-integer components (with an additional 32 bits). This format supports 32-bit depth, 8-bit stencil, and 24 bits are unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32FloatX8X24Typeless">
+      <summary>A 32-bit floating-point component, and two typeless components (with an additional 32 bits). This format supports 32-bit red channel, 8 bits are unused, and 24 bits are unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.X32TypelessG8X24UInt">
+      <summary>A 32-bit typeless component, and two unsigned-integer components (with an additional 32 bits). This format has 32 bits unused, 8 bits for green channel, and 24 bits are unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R10G10B10A2Typeless">
+      <summary>A four-component, 32-bit typeless format that supports 10 bits for each color and 2 bits for alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R10G10B10A2UIntNormalized">
+      <summary>A four-component, 32-bit unsigned-normalized-integer format that supports 10 bits for each color and 2 bits for alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R10G10B10A2UInt">
+      <summary>A four-component, 32-bit unsigned-integer format that supports 10 bits for each color and 2 bits for alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R11G11B10Float">
+      <summary>Three partial-precision floating-point numbers encoded into a single 32-bit value (a variant of s10e5, which is sign bit, 10-bit mantissa, and 5-bit biased (15) exponent). There are no sign bits, and there is a 5-bit biased (15) exponent for each channel, 6-bit mantissa for R and G, and a 5-bit mantissa for B.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8B8A8Typeless">
+      <summary>A four-component, 32-bit typeless format that supports 8 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8B8A8UIntNormalized">
+      <summary>A four-component, 32-bit unsigned-normalized-integer format that supports 8 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8B8A8UIntNormalizedSrgb">
+      <summary>A four-component, 32-bit unsigned-normalized integer sRGB format that supports 8 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8B8A8UInt">
+      <summary>A four-component, 32-bit unsigned-integer format that supports 8 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8B8A8IntNormalized">
+      <summary>A four-component, 32-bit signed-normalized-integer format that supports 8 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8B8A8Int">
+      <summary>A four-component, 32-bit signed-integer format that supports 8 bits per channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16Typeless">
+      <summary>A two-component, 32-bit typeless format that supports 16 bits for the red channel and 16 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16Float">
+      <summary>A two-component, 32-bit floating-point format that supports 16 bits for the red channel and 16 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16UIntNormalized">
+      <summary>A two-component, 32-bit unsigned-normalized-integer format that supports 16 bits each for the green and red channels.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16UInt">
+      <summary>A two-component, 32-bit unsigned-integer format that supports 16 bits for the red channel and 16 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16IntNormalized">
+      <summary>A two-component, 32-bit signed-normalized-integer format that supports 16 bits for the red channel and 16 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16G16Int">
+      <summary>A two-component, 32-bit signed-integer format that supports 16 bits for the red channel and 16 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32Typeless">
+      <summary>A single-component, 32-bit typeless format that supports 32 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.D32Float">
+      <summary>A single-component, 32-bit floating-point format that supports 32 bits for depth.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32Float">
+      <summary>A single-component, 32-bit floating-point format that supports 32 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32UInt">
+      <summary>A single-component, 32-bit unsigned-integer format that supports 32 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R32Int">
+      <summary>A single-component, 32-bit signed-integer format that supports 32 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R24G8Typeless">
+      <summary>A two-component, 32-bit typeless format that supports 24 bits for the red channel and 8 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.D24UIntNormalizedS8UInt">
+      <summary>A 32-bit z-buffer format that supports 24 bits for depth and 8 bits for stencil.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R24UIntNormalizedX8Typeless">
+      <summary>A 32-bit format, that contains a 24 bit, single-component, unsigned-normalized integer, with an additional typeless 8 bits. This format has 24 bits red channel and 8 bits unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.X24TypelessG8UInt">
+      <summary>A 32-bit format, that contains a 24 bit, single-component, typeless format, with an additional 8 bit unsigned integer component. This format has 24 bits unused and 8 bits green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8Typeless">
+      <summary>A two-component, 16-bit typeless format that supports 8 bits for the red channel and 8 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8UIntNormalized">
+      <summary>A two-component, 16-bit unsigned-normalized-integer format that supports 8 bits for the red channel and 8 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8UInt">
+      <summary>A two-component, 16-bit unsigned-integer format that supports 8 bits for the red channel and 8 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8IntNormalized">
+      <summary>A two-component, 16-bit signed-normalized-integer format that supports 8 bits for the red channel and 8 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8Int">
+      <summary>A two-component, 16-bit signed-integer format that supports 8 bits for the red channel and 8 bits for the green channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16Typeless">
+      <summary>A single-component, 16-bit typeless format that supports 16 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16Float">
+      <summary>A single-component, 16-bit floating-point format that supports 16 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.D16UIntNormalized">
+      <summary>A single-component, 16-bit unsigned-normalized-integer format that supports 16 bits for depth.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16UIntNormalized">
+      <summary>A single-component, 16-bit unsigned-normalized-integer format that supports 16 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16UInt">
+      <summary>A single-component, 16-bit unsigned-integer format that supports 16 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16IntNormalized">
+      <summary>A single-component, 16-bit signed-normalized-integer format that supports 16 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R16Int">
+      <summary>A single-component, 16-bit signed-integer format that supports 16 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8Typeless">
+      <summary>A single-component, 8-bit typeless format that supports 8 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8UIntNormalized">
+      <summary>A single-component, 8-bit unsigned-normalized-integer format that supports 8 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8UInt">
+      <summary>A single-component, 8-bit unsigned-integer format that supports 8 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8IntNormalized">
+      <summary>A single-component, 8-bit signed-normalized-integer format that supports 8 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8Int">
+      <summary>A single-component, 8-bit signed-integer format that supports 8 bits for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.A8UIntNormalized">
+      <summary>A single-component, 8-bit unsigned-normalized-integer format for alpha only.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R1UIntNormalized">
+      <summary>A single-component, 1-bit unsigned-normalized integer format that supports 1 bit for the red channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R9G9B9E5SharedExponent">
+      <summary>Three partial-precision floating-point numbers encoded into a single 32-bit value all sharing the same 5-bit exponent (variant of s10e5, which is sign bit, 10-bit mantissa, and 5-bit biased (15) exponent). There is no sign bit, and there is a shared 5-bit biased (15) exponent and a 9-bit mantissa for each channel.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R8G8B8G8UIntNormalized">
+      <summary>A four-component, 32-bit unsigned-normalized-integer format. This packed RGB format is analogous to the UYVY format. Each 32-bit block describes a pair of pixels: (R8, G8, B8) and (R8, G8, B8) where the R8/B8 values are repeated, and the G8 values are unique to each pixel. Width must be even.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.G8R8G8B8UIntNormalized">
+      <summary>A four-component, 32-bit unsigned-normalized-integer format. This packed RGB format is analogous to the YUY2 format. Each 32-bit block describes a pair of pixels: (R8, G8, B8) and (R8, G8, B8) where the R8/B8 values are repeated, and the G8 values are unique to each pixel. Width must be even.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC1Typeless">
+      <summary>Four-component typeless block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC1UIntNormalized">
+      <summary>Four-component block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC1UIntNormalizedSrgb">
+      <summary>Four-component block-compression format for sRGB data.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC2Typeless">
+      <summary>Four-component typeless block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC2UIntNormalized">
+      <summary>Four-component block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC2UIntNormalizedSrgb">
+      <summary>Four-component block-compression format for sRGB data.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC3Typeless">
+      <summary>Four-component typeless block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC3UIntNormalized">
+      <summary>Four-component block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC3UIntNormalizedSrgb">
+      <summary>Four-component block-compression format for sRGB data.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC4Typeless">
+      <summary>One-component typeless block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC4UIntNormalized">
+      <summary>One-component block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC4IntNormalized">
+      <summary>One-component block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC5Typeless">
+      <summary>Two-component typeless block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC5UIntNormalized">
+      <summary>Two-component block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC5IntNormalized">
+      <summary>Two-component block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B5G6R5UIntNormalized">
+      <summary>A three-component, 16-bit unsigned-normalized-integer format that supports 5 bits for blue, 6 bits for green, and 5 bits for red.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B5G5R5A1UIntNormalized">
+      <summary>A four-component, 16-bit unsigned-normalized-integer format that supports 5 bits for each color channel and 1-bit alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B8G8R8A8UIntNormalized">
+      <summary>A four-component, 32-bit unsigned-normalized-integer format that supports 8 bits for each color channel and 8-bit alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B8G8R8X8UIntNormalized">
+      <summary>A four-component, 32-bit unsigned-normalized-integer format that supports 8 bits for each color channel and 8 bits unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.R10G10B10XRBiasA2UIntNormalized">
+      <summary>A four-component, 32-bit 2.8-biased fixed-point format that supports 10 bits for each color channel and 2-bit alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B8G8R8A8Typeless">
+      <summary>A four-component, 32-bit typeless format that supports 8 bits for each channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B8G8R8A8UIntNormalizedSrgb">
+      <summary>A four-component, 32-bit unsigned-normalized standard RGB format that supports 8 bits for each channel including alpha.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B8G8R8X8Typeless">
+      <summary>A four-component, 32-bit typeless format that supports 8 bits for each color channel, and 8 bits are unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B8G8R8X8UIntNormalizedSrgb">
+      <summary>A four-component, 32-bit unsigned-normalized standard RGB format that supports 8 bits for each color channel, and 8 bits are unused.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC6HTypeless">
+      <summary>A typeless block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC6H16UnsignedFloat">
+      <summary>A block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC6H16Float">
+      <summary>A block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC7Typeless">
+      <summary>A typeless block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC7UIntNormalized">
+      <summary>A block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.BC7UIntNormalizedSrgb">
+      <summary>A block-compression format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Ayuv">
+      <summary>Most common YUV 4:4:4 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Y410">
+      <summary>10-bit per channel packed YUV 4:4:4 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Y416">
+      <summary>16-bit per channel packed YUV 4:4:4 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.NV12">
+      <summary>Most common YUV 4:2:0 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.P010">
+      <summary>10-bit per channel planar YUV 4:2:0 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.P016">
+      <summary>16-bit per channel planar YUV 4:2:0 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Opaque420">
+      <summary>8-bit per channel planar YUV 4:2:0 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Yuy2">
+      <summary>Most common YUV 4:2:2 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Y210">
+      <summary>10-bit per channel packed YUV 4:2:2 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.Y216">
+      <summary>16-bit per channel packed YUV 4:2:2 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.NV11">
+      <summary>Most common planar YUV 4:1:1 video resource format.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.AI44">
+      <summary>4-bit palletized YUV format that is commonly used for DVD subpicture.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.IA44">
+      <summary>4-bit palletized YUV format that is commonly used for DVD subpicture.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.P8">
+      <summary>8-bit palletized format that is used for palletized RGB data when the processor processes ISDB-T data and for palletized YUV data when the processor processes BluRay data.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.A8P8">
+      <summary>8-bit palletized format with 8 bits of alpha that is used for palletized YUV data when the processor processes BluRay data.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.DirectX.DirectXPixelFormat.B4G4R4A4UIntNormalized">
+      <summary>A four-component, 16-bit unsigned-normalized integer format that supports 4 bits for each channel including alpha.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Numerics.Matrix3x2">
+      <summary>
+        <p>A 3x2 matrix, used for 2D transforms.</p>
+        <p>To manipulate matrix values, use the .NET <see cref="T:System.Numerics.Matrix3x2" />
+           or C++ <a href="WindowsNumerics_float3x2.htm">float3x2</a> types instead.</p>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix3x2.M11">
+      <summary>Value at row 1 column 1 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix3x2.M12">
+      <summary>Value at row 1 column 2 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix3x2.M21">
+      <summary>Value at row 2 column 1 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix3x2.M22">
+      <summary>Value at row 2 column 2 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix3x2.M31">
+      <summary>Value at row 3 column 1 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix3x2.M32">
+      <summary>Value at row 3 column 2 of the matrix.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Numerics.Matrix4x4">
+      <summary>
+        <p>A 4x4 matrix, used for 3D transforms.</p>
+        <p>To manipulate matrix values, use the .NET <see cref="T:System.Numerics.Matrix4x4" />
+           or C++ <a href="WindowsNumerics_float4x4.htm">float4x4</a> types instead.</p>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M11">
+      <summary>Value at row 1 column 1 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M12">
+      <summary>Value at row 1 column 2 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M13">
+      <summary>Value at row 1 column 3 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M14">
+      <summary>Value at row 1 column 4 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M21">
+      <summary>Value at row 2 column 1 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M22">
+      <summary>Value at row 2 column 2 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M23">
+      <summary>Value at row 2 column 3 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M24">
+      <summary>Value at row 2 column 4 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M31">
+      <summary>Value at row 3 column 1 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M32">
+      <summary>Value at row 3 column 2 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M33">
+      <summary>Value at row 3 column 3 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M34">
+      <summary>Value at row 3 column 4 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M41">
+      <summary>Value at row 4 column 1 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M42">
+      <summary>Value at row 4 column 2 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M43">
+      <summary>Value at row 4 column 3 of the matrix.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Matrix4x4.M44">
+      <summary>Value at row 4 column 4 of the matrix.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Numerics.Plane">
+      <summary>
+        <p>A plane.</p>
+        <p>To manipulate plane values, use the .NET <see cref="T:System.Numerics.Plane" />
+           or C++ <a href="WindowsNumerics_plane.htm">plane</a> types instead.</p>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Plane.Normal">
+      <summary>Normal vector of the plane.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Plane.D">
+      <summary>Distance of the plane along its normal from the origin.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Numerics.Quaternion">
+      <summary>
+        <p>A four dimensional vector, used to represent a rotation.</p>
+        <p>To manipulate quaternion values, use the .NET <see cref="T:System.Numerics.Quaternion" />
+           or C++ <a href="WindowsNumerics_quaternion.htm">quaternion</a> types instead.</p>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Quaternion.X">
+      <summary>X value of the vector component of the quaternion.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Quaternion.Y">
+      <summary>Y value of the vector component of the quaternion.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Quaternion.Z">
+      <summary>Z value of the vector component of the quaternion.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Quaternion.W">
+      <summary>Rotation component of the quaternion.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Numerics.Vector2">
+      <summary>
+        <p>A vector with two components.</p>
+        <p>To manipulate vector values, use the .NET <see cref="T:System.Numerics.Vector2" />
+           or C++ <a href="WindowsNumerics_float2.htm">float2</a> types instead.</p>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector2.X">
+      <summary>X component of the vector.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector2.Y">
+      <summary>Y component of the vector.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Numerics.Vector3">
+      <summary>
+        <p>A vector with three components.</p>
+        <p>To manipulate vector values, use the .NET <see cref="T:System.Numerics.Vector3" />
+           or C++ <a href="WindowsNumerics_float3.htm">float3</a> types instead.</p>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector3.X">
+      <summary>X component of the vector.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector3.Y">
+      <summary>Y component of the vector.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector3.Z">
+      <summary>Z component of the vector.</summary>
+    </member>
+    <member name="T:Microsoft.Graphics.Canvas.Numerics.Vector4">
+      <summary>
+        <p>A vector with four components.</p>
+        <p>To manipulate vector values, use the .NET <see cref="T:System.Numerics.Vector4" />
+           or C++ <a href="WindowsNumerics_float4.htm">float4</a> types instead.</p>
+      </summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector4.X">
+      <summary>X component of the vector.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector4.Y">
+      <summary>Y component of the vector.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector4.Z">
+      <summary>Z component of the vector.</summary>
+    </member>
+    <member name="F:Microsoft.Graphics.Canvas.Numerics.Vector4.W">
+      <summary>W component of the vector.</summary>
+    </member>
+  </members>
+</doc>
