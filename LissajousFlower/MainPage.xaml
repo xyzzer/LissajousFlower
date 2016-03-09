@@ -13,7 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition
-                Width="400" />
+                Width="200" />
         </Grid.ColumnDefinitions>
         <canvas:CanvasControl
             x:Name="canvas"
@@ -84,6 +84,10 @@
             <RadioButton
                 x:Name="RadioButtonDrawEllipses"
                 Content="Draw Ellipses"
+                IsChecked="False" />
+            <CheckBox
+                x:Name="CheckBoxDrawMoire"
+                Content="Draw Moiré Pattern"
                 IsChecked="False" />
         </StackPanel>
     </Grid>

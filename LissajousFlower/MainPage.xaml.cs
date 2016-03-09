@@ -110,16 +110,54 @@ namespace LissajousFlower
                         args.DrawingSession.DrawLine(x1, y1, x, y, Color.FromArgb(255, (byte)r, (byte)g, (byte)b), t);
                     else
                         args.DrawingSession.FillEllipse(x, y, t, t, Color.FromArgb(255, (byte)r, (byte)g, (byte)b));
-                    
+
                 }
 
                 x1 = x;
                 y1 = y;
             }
 
+            if (CheckBoxDrawMoire.IsChecked == true)
+            {
+                DrawMoiredLines(args, delta1, w2, h2, ref x1, ref y1);
+            }
+
             canvas.Invalidate();
             //args.DrawingSession.DrawText("Hello, world!", 100, 100, Colors.Yellow);
             //args.DrawingSession.
+        }
+
+        private static void DrawMoiredLines(CanvasDrawEventArgs args, double delta1, double w2, double h2, ref float x1, ref float y1)
+        {
+            int numOfLines = (int)(w2 / 2);
+            var sin = Math.Sin(delta1 / 100);
+            var cos = Math.Cos(delta1 / 100);
+            var t = (float)(.5 * w2 / numOfLines);
+
+            for (int i = 0; i < numOfLines; i += 1)
+            {
+                x1 = (float)(w2 / 2 + ((double)i / numOfLines) * w2);
+                y1 = (float)(h2 / 2);
+                var x2 = x1;
+                var y2 = (float)(h2 * 3 / 2);
+
+                args.DrawingSession.DrawLine(x1, y1, x2, y2, Colors.White, t);
+
+                x1 -= (float)w2;
+                y1 -= (float)h2;
+                x2 -= (float)w2;
+                y2 -= (float)h2;
+
+                float xx1 = (float)(cos * x1 - sin * y1);
+                float yy1 = (float)(sin * x1 + cos * y1);
+                float xx2 = (float)(cos * x2 - sin * y2);
+                float yy2 = (float)(sin * x2 + cos * y2);
+                xx1 += (float)w2;
+                yy1 += (float)h2;
+                xx2 += (float)w2;
+                yy2 += (float)h2;
+                args.DrawingSession.DrawLine(xx1, yy1, xx2, yy2, Colors.White, t);
+            }
         }
 
         private void Allow_unclosed_loops_OnClick(object sender, RoutedEventArgs e)
